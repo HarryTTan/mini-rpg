@@ -46,3 +46,4 @@ PATHFINDING_ALGO = "astar"  # "astar" 或 "dijkstra"
 # 朝向
 # ============================
 DIRECTIONS = {(0,-1):"UP", (0,1):"DOWN", (1,0):"RIGHT", (-1,0):"LEFT"}
+

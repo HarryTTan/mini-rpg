@@ -2,3 +2,6 @@ rpg_game/.venv/
 __pycache__/
 *.pyc
 .idea/
+.claude/
+CLAUDE.md
+rpg_game/PROGRESS.md

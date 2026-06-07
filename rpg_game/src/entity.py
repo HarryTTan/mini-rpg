@@ -29,10 +29,13 @@ class Entity:
 
 class Player(Entity):
 
-    #玩家实体，特殊属性包括朝向
+    #玩家实体，特殊属性包括朝向等
     def __init__(self, tile_x, tile_y):
         super().__init__(tile_x, tile_y,COLOR_PLAYER)
         self.facing = "down"
+        self.hp=70
+        self.max_hp=100
+        self.attack=5
 
     #移动
     def move(self, dx, dy, game_map, npc_list):
