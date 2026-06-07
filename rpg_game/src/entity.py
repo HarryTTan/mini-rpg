@@ -1,4 +1,4 @@
-from src.constants import TILE_SIZE, COLOR_PLAYER, COLOR_NPC, DIRECTIONS
+from src.constants import TILE_SIZE, COLOR_MONSTER, COLOR_PLAYER, COLOR_NPC, DIRECTIONS
 from src.dialogue import DialogueTree
 import pygame
 
@@ -38,9 +38,9 @@ class Player(Entity):
         self.attack=5
 
     #移动
-    def move(self, dx, dy, game_map, npc_list):
+    def move(self, dx, dy, game_map, npc_list, monster_list):
         new_x, new_y= self.tile_x + dx, self.tile_y + dy
-        if game_map.is_walkable(new_x, new_y) and not game_map.is_npc_at(npc_list, new_x, new_y):
+        if game_map.is_walkable(new_x, new_y) and not game_map.is_npc_at(npc_list+monster_list, new_x, new_y):
             self.tile_x, self.tile_y = new_x, new_y
         self.facing= DIRECTIONS[(dx, dy)]
 
@@ -55,3 +55,13 @@ class NPC(Entity):
     #开始对话时重置对话树
     def reset(self):
         self.dialogue_tree.current = self.dialogue_tree.root
+
+class Monster(Entity):
+
+    #怪物实体，属性包括血量、攻击力等
+    def __init__(self,tile_x, tile_y, name, hp, attack):
+        super().__init__(tile_x, tile_y, COLOR_MONSTER)
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+        self.alive = True

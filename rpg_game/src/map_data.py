@@ -37,7 +37,7 @@ class MapLoader:
         tile_id = self.get_tile(col, row)
         return Tile.is_walkable(tile_id)
 
-    #npc碰撞判定，写成静态方法似乎方便一点
+    #npc与怪物碰撞判定，写成静态方法似乎方便一点
     @staticmethod
     def is_npc_at(npc_list, tile_x, tile_y):
         for npc in npc_list:

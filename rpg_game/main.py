@@ -3,7 +3,7 @@ import sys
 
 from src.constants import TILE_SIZE, TILE_COLORS
 from src.map_data import MapLoader
-from src.entity import Player, NPC
+from src.entity import Player, NPC, Monster
 from src.dialogue import DialogueScene
 from src.inventory import Inventory,InventoryBox
 
@@ -15,6 +15,10 @@ def main():
     npc_list = [
         NPC(5, 5, "Village Chief", "assets/dialogues/elder_dialogue.json"),
         NPC(25, 15, "Kid", "assets/dialogues/younger_dialogue.json"),
+    ]
+    monster_list = [
+        Monster(15, 3, "Slime", 20, 5),
+        Monster(25, 12, "Goblin", 40, 8)
     ]
     dialogue_scene = None
     inventory=Inventory()
@@ -36,7 +40,7 @@ def main():
         #判定是否对话
         if dialogue_scene is None:
 
-            #一般类型事件，目前管理进入对话以及退出游戏
+            #一般类型事件，目前管理进入对话以及退出游戏等
             for event in events:
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -71,6 +75,18 @@ def main():
                                 dialogue_scene = DialogueScene(screen, npc)
                                 break
 
+                    #攻击键
+                    elif event.key == pygame.K_SPACE:
+                        for monster in monster_list:
+                            if not monster.alive:
+                                continue
+                            dist=abs(player.tile_x - monster.tile_x)+abs(player.tile_y - monster.tile_y)
+                            if dist == 1:
+                                monster.hp-=player.attack
+                                if monster.hp <= 0:
+                                    monster.alive = False
+                                break
+
             #移动检测，做了按住不动就可以持续移动的功能，打开背包时不能移动
             if not show_inventory:
                 keys = pygame.key.get_pressed()
@@ -78,13 +94,13 @@ def main():
                 if move_timer <=0 and (keys[pygame.K_LEFT] or keys[pygame.K_RIGHT] or keys[pygame.K_UP] or keys[pygame.K_DOWN]) :
                     move_timer = move_delay
                     if keys[pygame.K_UP]:
-                        player.move(0, -1, game_map, npc_list)
+                        player.move(0, -1, game_map, npc_list, monster_list)
                     elif keys[pygame.K_DOWN]:
-                        player.move(0, 1, game_map, npc_list)
+                        player.move(0, 1, game_map, npc_list, monster_list)
                     elif keys[pygame.K_LEFT]:
-                        player.move(-1, 0, game_map, npc_list)
+                        player.move(-1, 0, game_map, npc_list, monster_list)
                     elif keys[pygame.K_RIGHT]:
-                        player.move(1, 0, game_map, npc_list)
+                        player.move(1, 0, game_map, npc_list, monster_list)
         else:
             dialogue_scene.handle_events(events)
 
@@ -98,6 +114,8 @@ def main():
         for npc in npc_list:
             npc.render(screen)
         player.render(screen)
+        for monster in monster_list:
+            if monster.alive: monster.render(screen)
 
         #背包渲染
         if show_inventory:

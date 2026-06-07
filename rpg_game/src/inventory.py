@@ -2,6 +2,7 @@ from collections import defaultdict
 import pygame
 from src.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
+#基本背包信息
 items_info={
     "sword":(5, "attack", "equip"),
     "potion":(20, "heal", "consume"),
@@ -9,6 +10,7 @@ items_info={
     "big_potion":(20, "heal_over_max", "consume")
 }
 
+#物品类，用于存储物品信息
 class Item:
     def __init__(self,name):
         info=items_info[name]
@@ -17,6 +19,7 @@ class Item:
         self.effect_type=info[1]
         self.consume_type=info[2]
 
+#背包类，实现所有背包功能
 class Inventory:
     def __init__(self):
         self.items=defaultdict(lambda:0)
@@ -63,6 +66,7 @@ class Inventory:
     def get_list(self):
         return [(name,count) for name,count in self.items.items()]
 
+#背包界面渲染
 class InventoryBox:
     def __init__(self):
         self.font = pygame.font.Font(None,24)
