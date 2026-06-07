@@ -1,0 +1,16 @@
+{
+  "text": "Hello! It's a nice day, isn't it?",
+  "responses": ["Yep, I've gotten those annoying things eliminated.", "No, I'm not here for small talk."],
+  "children": [
+    {
+      "text": "You killed those monsters? How brave are you!",
+      "responses": [],
+      "children": []
+    },
+    {
+      "text": "Well, I think you should learn to be more considerate.",
+      "responses": [],
+      "children": []
+    }
+  ]
+}

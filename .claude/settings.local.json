@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show:*)",
+      "Bash(pip:*)",
+      "WebSearch",
+      "Bash(dir:*)",
+      "Bash(del:*)",
+      "Bash(.venv/Scripts/python.exe:*)",
+      "Bash(git --version)"
+    ]
+  }
+}

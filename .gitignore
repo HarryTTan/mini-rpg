@@ -1,0 +1,4 @@
+rpg_game/.venv/
+__pycache__/
+*.pyc
+.idea/

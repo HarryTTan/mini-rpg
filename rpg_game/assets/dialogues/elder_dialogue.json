@@ -1,0 +1,27 @@
+{
+  "text": "Welcome!",
+  "responses": ["What can I do for you?", "Sorry, I gotta go now."],
+  "children": [
+    {
+      "text": "Can you deal with those disturbing monsters? They've been a trouble.",
+      "responses": ["Absolutely.","Just a moment, I got something else to do."],
+      "children": [
+        {
+          "text": "Fantastic! Please be careful, those monsters are quite violent.",
+          "responses": [],
+          "children": []
+        },
+        {
+          "text": "That's fine. Come here when you get ready.",
+          "responses": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "Okay, enjoy your day.",
+      "responses": [],
+      "children": []
+    }
+  ]
+}
