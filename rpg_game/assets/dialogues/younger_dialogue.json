@@ -1,14 +1,14 @@
 {
-  "text": "Hello! It's a nice day, isn't it?",
-  "responses": ["Yep, I've gotten those annoying things eliminated.", "No, I'm not here for small talk."],
+  "text": "Psst! Keep your voice down! That goblin is right over there, just a few steps away...",
+  "responses": ["Don't worry, I'll deal with it.", "It's not that close. You're overreacting."],
   "children": [
     {
-      "text": "You killed those monsters? How brave are you!",
+      "text": "Really? You'd do that? Thank you! Just... please be careful. It looks really strong.",
       "responses": [],
       "children": []
     },
     {
-      "text": "Well, I think you should learn to be more considerate.",
+      "text": "Overreacting?! It's only three tiles away from here! I've been stuck standing here for days...",
       "responses": [],
       "children": []
     }

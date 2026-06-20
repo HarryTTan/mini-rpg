@@ -1,25 +1,25 @@
 {
-  "text": "Welcome!",
-  "responses": ["What can I do for you?", "Sorry, I gotta go now."],
+  "text": "Ah, a traveler! Welcome to our village. I am the chief here.",
+  "responses": ["What's going on around here?", "Sorry, I'm just passing through."],
   "children": [
     {
-      "text": "Can you deal with those disturbing monsters? They've been a trouble.",
-      "responses": ["Absolutely.","Just a moment, I got something else to do."],
+      "text": "Monsters have been appearing lately. There's a cave to the east — I fear that's where they're coming from. Could you help us?",
+      "responses": ["I'll take care of them.", "Maybe later, I need to prepare first."],
       "children": [
         {
-          "text": "Fantastic! Please be careful, those monsters are quite violent.",
+          "text": "Thank you, brave one! The cave entrance is at the eastern edge of the village. Be careful in there.",
           "responses": [],
           "children": []
         },
         {
-          "text": "That's fine. Come here when you get ready.",
+          "text": "Of course, take your time. Come find me when you're ready.",
           "responses": [],
           "children": []
         }
       ]
     },
     {
-      "text": "Okay, enjoy your day.",
+      "text": "Safe travels, then. But be wary — strange creatures have been spotted nearby.",
       "responses": [],
       "children": []
     }

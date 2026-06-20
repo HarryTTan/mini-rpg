@@ -1,10 +1,10 @@
-from src.constants import TILE_GRASS, TILE_PATH, TILE_DOOR
+from src.constants import TILE_CAVE, TILE_GRASS, TILE_PATH, TILE_DOOR, TILE_CAVE_FLOOR
 
 
 class Tile:
     @staticmethod
     def is_walkable(tile_id):
-        return tile_id in (TILE_GRASS, TILE_PATH, TILE_DOOR)
+        return tile_id in (TILE_CAVE, TILE_GRASS, TILE_PATH, TILE_DOOR, TILE_CAVE_FLOOR)
 
 
 class MapLoader:

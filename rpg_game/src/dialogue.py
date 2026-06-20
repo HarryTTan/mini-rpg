@@ -104,7 +104,7 @@ class DialogBox:
         #画白框
         pygame.draw.rect(screen, (255, 255, 255), self.rect, 2)
         #渲染对话文字，自动换行
-        lines = self._wrap_text(text, 40)
+        lines = self._wrap_text(text, 100)
         y_offset = self.rect.y + 15
         for line in lines:
             line_surface = self.font.render(line, True, (255, 255, 255))
