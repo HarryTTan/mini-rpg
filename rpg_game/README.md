@@ -56,6 +56,14 @@
 
 **环境要求：** Python 3.10+（Windows / macOS / Linux 均可）
 
+**依赖库：**
+
+| 库 | 版本 | 用途 |
+|----|------|------|
+| `pygame-ce` | >=2.5.0 | 图形渲染、事件处理、游戏主循环 |
+
+其余全部使用 Python 标准库：`heapq`（优先队列）、`json`（对话数据解析）、`collections`（背包哈希表）、`sys`（退出）。
+
 ```bash
 # 克隆仓库
 git clone https://github.com/HarryTTan/mini-rpg.git
