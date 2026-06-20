@@ -54,31 +54,42 @@
 
 ## 运行指南
 
+**环境要求：** Python 3.10+（Windows / macOS / Linux 均可）
+
 ```bash
 # 克隆仓库
 git clone https://github.com/HarryTTan/mini-rpg.git
 cd mini-rpg
 
-# 创建虚拟环境并安装依赖
-python -m venv .venv
+# 创建虚拟环境
+python3 -m venv .venv
+
+# 激活虚拟环境
 source .venv/bin/activate      # macOS / Linux
 # .venv\Scripts\activate       # Windows
 
+# 安装依赖
 pip install -r requirements.txt
 
 # 运行游戏
 python main.py
 ```
 
+> macOS 注意：如 `python3` 不存在，改用 `python`。
+
 **操作说明：**
 
-| 按键 | 功能 |
-|------|------|
-| ↑↓←→ | 移动 |
-| Z | 对话 / 背包内确认使用 |
-| I | 开关背包 |
-| 空格 | 攻击相邻怪物 |
-| ESC | 退出游戏 |
+| 按键 | 场景 | 功能 |
+|------|------|------|
+| ↑↓←→ | 一般 | 网格移动（按住可连续移动） |
+| Z | 一般 | 与相邻NPC对话（曼哈顿距离=1） |
+| ↑↓ | 对话中 | 选择回应选项 |
+| Z | 对话中 | 确认选项 / 对话结束按Z关闭 |
+| I | 一般 | 开关背包面板 |
+| ↑↓ | 背包中 | 选择物品 |
+| Z | 背包中 | 使用选中物品 |
+| 空格 | 一般 | 攻击相邻怪物 |
+| ESC | 任意 | 退出游戏 |
 
 ---
 
